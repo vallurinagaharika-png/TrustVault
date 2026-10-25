@@ -39,7 +39,7 @@ def setup():
                     "INSERT INTO users(username,password,role) VALUES(?,?,?)",
                     (username, generate_password_hash(password), role)
                 )
-
+setup()
 def log(db, action, detail=""):
     db.execute("INSERT INTO audit(username,action,detail) VALUES(?,?,?)",
                (session.get("user"), action, detail))
